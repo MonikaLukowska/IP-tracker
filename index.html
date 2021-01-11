@@ -7,5 +7,59 @@
   <title>IP Address Tracker</title>
 </head>
 <body>
+  <header class="header">
+    <div class="row">
+      <div class="col">
+        <div class="header__menu">
+          <span class="header__menu__burger"></span>
+          <ul class="header__menu__nav">
+            <li class="nav__item">Home</li>
+            <li class="nav__item">Change color mode</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="header__logo">
+          <img src="/images/logo.png" alt="IP Adress Tracker">
+        </div>
+        <span class="header__logo__text">IP Tracker</span>
+      </div>
+      <div class="col">
+        <div class="header__user-ip"></div>
+      </div>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="form">
+      <form>
+        <label for="ip"></label>
+        <input class="form__input" type="text" name="ip" placeholder="Enter IP address">
+        <button class="form__button" type="submit"></button>
+      </form>
+    </section>
+    <section class="result">
+      <div class="result__text-content">
+        <div class="row row--narrow">
+          <div class="result__item">
+            <p class="result__header">IP address</p>
+            <p class="result__data ip"></p>
+          </div>
+          <div class="result__item">
+            <p class="result__header">Location</p>
+            <p class="result__data location"></p>
+          </div>
+          <div class="result__item">
+            <p class="result__header">Timezone</p>
+            <p class="result__data time"></p>
+          </div>
+          <div class="result__item">
+            <p class="result__header">ISP</p>
+            <p class="result__data isp"></p>
+          </div>
+        </div>
+      </div>
+      <div class="map"></div>
+    </section>
+  </main>
 </body>
 </html>
