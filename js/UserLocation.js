@@ -11,14 +11,22 @@ class UserLocation {
   }
 
   event() {
-      window.addEventListener("load", () => this.getUserData());
+      window.addEventListener("load", () => 
+      this.getUserData()
+      .then(data => this.displayUserData(data)));
     }
 
   getUserData() {
-   fetch(this.url)
+   return fetch(this.url)
        .then(response => response.json())
        .then((data => {
-         console.log(data)
+         return data
+       }))
+       .catch(err => {
+         console.log(err)
+       })
+  }
+  displayUserData(data) {
          this.userIPinput.textContent = `Your IP is ${this.publicIp}`;
          this.ip.textContent = this.publicIp;
          this.location.textContent = data.location.city;
@@ -26,11 +34,6 @@ class UserLocation {
          this.isp.textContent = data.isp;
          localStorage.setItem('lat', data.location.lat);
          localStorage.setItem('lng', data.location.lng);
-
-       }))
-       .catch(err => {
-         console.log(err)
-       })
   }
 }
 
