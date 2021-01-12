@@ -6,6 +6,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
   <title>IP Address Tracker</title>
 </head>
 <body>
@@ -58,7 +64,9 @@
             <p class="result__data isp"></p>
           </div>
       </div>
-      <div class="map"></div>
+      <div id="mapid" class="map-container">
+        <div id="mapid" class="map-container__map"></div>
+      </div>
     </section>
   </main>
 </body>

@@ -1,23 +1,26 @@
 .result {
-  max-width: 1200px;
-  width:90%;
-  margin:0 auto;
-  transform:translateY(-30%);
-
-  @media(min-width: 1024px) {
-      width:70%;
-      transform:translateY(-50%);
-  }
+ position:relative;
 
   &__text-content {
+    max-width: 1200px;
+    width:90%;
+    margin:0 auto;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     background-color:#fff;
-    border-radius:30px;  
+    border-radius:30px; 
+    position:absolute;
+    top:-15%;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:2; 
+   
 
     @media(min-width: 1024px) {
       flex-wrap:nowrap;
+      width:70%;
+      
   } 
   }
 
