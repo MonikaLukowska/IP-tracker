@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 module.exports = {
     entry: './js/app.js',
 
@@ -34,12 +35,13 @@ module.exports = {
                     'css-loader',
                     'sass-loader',
                 ]
-            }
+            },
         ]
     },
 
     plugins: [
         new HtmlWebpackPlugin({template: './index.html'}),
         new webpack.HotModuleReplacementPlugin(),
+        
     ]
 };

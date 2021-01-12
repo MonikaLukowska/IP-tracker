@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
   <title>IP Address Tracker</title>
 </head>
 <body>
@@ -19,10 +21,10 @@
         </div>
       </div>
       <div class="col">
-        <div class="header__logo">
-          <img src="/images/logo.png" alt="IP Adress Tracker">
-        </div>
-        <span class="header__logo__text">IP Tracker</span>
+        <h1 class="header__logo">
+          <img src="logo.png" alt="IP Adress Tracker">
+          <span class="header__logo__text">IP Tracker</span>
+        </h1>
       </div>
       <div class="col">
         <div class="header__user-ip"></div>
@@ -30,33 +32,31 @@
     </div>
   </header>
   <main class="page-main">
-    <section class="form">
+    <section class="form" style="background-image: url('pattern-header.jpg')">
       <form>
         <label for="ip"></label>
-        <input class="form__input" type="text" name="ip" placeholder="Enter IP address">
-        <button class="form__button" type="submit"></button>
+        <input class="form__input" type="text" name="ip" placeholder="Search IP address or domain">
+        <button class="form__button" type="submit" style="background-image: url('magnifier.png')"></button>
       </form>
     </section>
     <section class="result">
       <div class="result__text-content">
-        <div class="row row--narrow">
           <div class="result__item">
-            <p class="result__header">IP address</p>
-            <p class="result__data ip"></p>
+            <h2 class="result__header">IP address</h2>
+            <p class="result__data ip">192.212.174.101</p>
           </div>
           <div class="result__item">
-            <p class="result__header">Location</p>
+            <h2 class="result__header">Location</h2>
             <p class="result__data location"></p>
           </div>
           <div class="result__item">
-            <p class="result__header">Timezone</p>
+            <h2 class="result__header">Timezone</h2>
             <p class="result__data time"></p>
           </div>
-          <div class="result__item">
-            <p class="result__header">ISP</p>
+          <div class="result__item no-after">
+            <h2 class="result__header">ISP</h2>
             <p class="result__data isp"></p>
           </div>
-        </div>
       </div>
       <div class="map"></div>
     </section>
