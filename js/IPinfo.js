@@ -14,7 +14,7 @@ class IPinfo {
   loadFirstTime() {
       this.getUserData()
       .then(data => this.displayFetchedData(data))
-      .then(() => this.map.loadMapFirst(L.map('mapid')))
+      .then((data) => this.map.loadMapFirst(L.map('mapid'), data.lat, data.lng))
     }
 
   getUserData() {

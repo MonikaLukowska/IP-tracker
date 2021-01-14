@@ -24,7 +24,6 @@ class UserIP {
        })
     }
   displayUserIP(data){
-      this.publicIP = localStorage.getItem('user-ip');
       this.userIPinput.textContent = `Your IP is ${data.ip}`;
     }
 }
