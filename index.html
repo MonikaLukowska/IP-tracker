@@ -9,9 +9,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
   <title>IP Address Tracker</title>
 </head>
 <body>
@@ -39,10 +36,10 @@
   </header>
   <main class="page-main">
     <section class="form" style="background-image: url('pattern-header.jpg')">
-      <form>
+      <form onSubmit="return false;">
         <label for="ip"></label>
         <input class="form__input" type="text" name="ip" placeholder="Search IP address or domain">
-        <button class="form__button" type="submit" style="background-image: url('magnifier.png')"></button>
+        <button class="form__button" type="button" style="background-image: url('magnifier.png')"></button>
       </form>
     </section>
     <section class="result">
@@ -64,10 +61,13 @@
             <p class="result__data isp"></p>
           </div>
       </div>
-      <div id="mapid" class="map-container">
+      <div class="map-container">
         <div id="mapid" class="map-container__map"></div>
       </div>
     </section>
   </main>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
 </body>
 </html>

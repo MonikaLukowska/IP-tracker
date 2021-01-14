@@ -1,22 +1,31 @@
 class UserIP {
   constructor(){
     this.url = "https://api64.ipify.org?format=json";
+    this.userIPinput = document.querySelector(".header__user-ip");
+    this.publicIp = ""
     this.event();
   }
 
   event() {
-      window.addEventListener("load", () => this.getUserIP());
+      window.addEventListener("load", () => this.getUserIP()
+       .then(data => this.displayUserIP(data))
+      );
     }
 
  getUserIP() {
-    fetch(this.url)
+   return fetch(this.url)
        .then(response => response.json())
        .then((data => {
-         localStorage.setItem('user-ip', data.ip)
+       localStorage.setItem('user-ip', data.ip)
+       return data
        }))
        .catch(err => {
          console.log(err)
        })
+    }
+  displayUserIP(data){
+      this.publicIP = localStorage.getItem('user-ip');
+      this.userIPinput.textContent = `Your IP is ${data.ip}`;
     }
 }
 
