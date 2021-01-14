@@ -4,8 +4,6 @@ import MapMaker from '../js/MapMaker.js';
 class Search {
   constructor(){
     this.input = document.querySelector(".form__input");
-    this.btn = document.querySelector(".form__button");
-    this.form = document.querySelector(".form")
     this.ip = document.querySelector(".ip");
     this.location = document.querySelector(".location");
     this.timezone = document.querySelector(".time");

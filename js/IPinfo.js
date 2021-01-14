@@ -1,9 +1,9 @@
 import MapMaker from '../js/MapMaker.js';
 class IPinfo {
-  constructor(ip, value){
-    this.ip = ip;
+  constructor(content, value){
+    this.content = content;
     this.value = value;
-    this.url = `https://geo.ipify.org/api/v1?apiKey=at_SiB15INYsXcVuNNK1vZcN0D2dNIHG&${value}=${this.ip}`
+    this.url = `https://geo.ipify.org/api/v1?apiKey=at_SiB15INYsXcVuNNK1vZcN0D2dNIHG&${value}=${this.content}`
     this.ip = document.querySelector(".ip");
     this.location = document.querySelector(".location");
     this.timezone = document.querySelector(".time");
@@ -33,12 +33,9 @@ class IPinfo {
          this.location.textContent = data.location.city;
          this.timezone.textContent = `UTC ${data.location.timezone}`;
          this.isp.textContent = data.isp;
-         localStorage.setItem('lat', data.location.lat);
-         localStorage.setItem('lng', data.location.lng);
          const lat = data.location.lat;
          const lng = data.location.lng;
          return ({lat, lng})
-
   }
 }
 
