@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
-        publicPath: '/'
+        publicPath: './.'
     },
 
     devServer: {
@@ -19,6 +20,7 @@ module.exports = {
         compress: true,
         port: 3000,
         hot: true,
+        publicPath: '/'
     },
 
     module: {
@@ -42,6 +44,16 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({template: './index.html'}),
         new webpack.HotModuleReplacementPlugin(),
+        new CopyPlugin(
+            {
+              patterns:[
+                {
+                    from: 'public',
+                    to: ''
+                }
+              ]
+            }
+          )
         
     ]
 };
