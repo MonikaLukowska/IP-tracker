@@ -5,9 +5,9 @@
   display: flex;
   align-items: center;
 
-  @media (min-width: 1024px){
-      height: 60px;
-    }
+  @media (min-width: 1024px) {
+    height: 60px;
+  }
 
   &__logo {
     font-size: 1.4rem;
@@ -18,55 +18,16 @@
     }
   }
 
-  &__menu {
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    width:100px;
-    &__nav {
-      width:0;
-      transform: translateX(-200px);
-    }
-
-    &__burger {
-      display:block;
-      position:relative;
-      width:20px;
-      height:4px;
-      background-color:#fff;
-      border-radius:3px;
-
-      &:before {
-        content:"";
-        position:absolute;
-        top: -8px;
-        left:0;
-        width:17px;
-        height:4px;
-        background-color:#fff;
-        border-radius:3px;
-      }
-      &:after {
-        content:"";
-        position:absolute;
-        top: calc(100% + 4px);
-        left:0;
-        width:23px;
-        height:4px;
-        background-color:#fff;
-        border-radius:3px;
-      }
-    }
-  }
-  .col:nth-child(2) {
-    @media (min-width: 1024px){
-      width:50%;
-    }
-  }
-
   &__user-ip {
     font-size: 1.4rem;
     letter-spacing: 1.2px;
-    text-align:center;
+    text-align: center;
+    margin: 1rem 0 0 0.5rem;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+    }
+  }
+  .row {
+    justify-content: space-between;
   }
 }

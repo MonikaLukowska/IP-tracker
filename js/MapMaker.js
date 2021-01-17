@@ -1,26 +1,27 @@
 class MapMaker {
   constructor(){
-    this.tileurl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
-    this.attr = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,' +
-    ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    this.tileurl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    this.attr = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     this.icon = L.icon ({
-      iconUrl: '../icon-location.svg',
+      iconUrl: 'icon-location.svg',
       iconSize: [20, 20]
     })
   }
   
-  loadMapFirst(map, lat, lng) {
+  loadMapFirst(lat, lng) {
+    const map = L.map('mapid')
     map.setView([lat, lng], 13);
     L.tileLayer(this.tileurl, {attribution:this.attr}).addTo(map);
     L.marker([lat, lng], {icon:this.icon}).addTo(map)
     }
 
   
-    updateMap(lat, lng, map) {
+  updateMap(lat, lng) {
+      const map = new L.map('mapid')
       map.setView([lat,lng], 13);
-      L.tileLayer(this.tile, {attribution:this.attr}).addTo(map);
+      L.tileLayer(this.tileurl, {attribution:this.attr}).addTo(map);
       L.marker([lat,lng], {icon:this.icon}).addTo(map)
-      }
+  }
 }
 
 export default MapMaker;

@@ -23,6 +23,7 @@ class UserIP {
          console.log(err)
        })
     }
+    
   displayUserIP(data){
       this.userIPinput.textContent = `Your IP is ${data.ip}`;
     }

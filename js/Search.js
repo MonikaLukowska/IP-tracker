@@ -13,16 +13,10 @@ class Search {
     this.map = new MapMaker
   }
 
-//get data from user's input
-  getInputData() {
-    const value = this.input.value
-    return value
-  }
 //check if valid ipv4/ipv6 or domain addres
   validate(value) {
     let content
     let type
-    value = this.getInputData();
     if(value.match(this.regexIP)) {
       type = "ipAddress"
       content = value
@@ -34,23 +28,24 @@ class Search {
     }
     return {type, content};
   }
+  
+  clearInput() {
+    this.input.value = ""
+  }
   //run on enter
   runOnEnter(e) {
-   const that = this;
-   if(e.key == "Enter") {
-     that.fetchData()
-   } else return  
+   e.key == "Enter" ? this.fetchData() : false   
   }
   //fetch and display. remomve old map container
   fetchData() {
       document.querySelector("#mapid").outerHTML = ""
       document.querySelector('.map-container').innerHTML = '<div id="mapid" class="map-container__map"></div>'
-      const map = new L.map('mapid')
-      let url = this.validate();
+      let url = this.validate(this.input.value);
       const info = new IPinfo(url.content, url.type)
       info.getUserData()
       .then(data => info.displayFetchedData(data))
-      .then(data => this.map.updateMap(data.lat, data.lng, map))
+      .then(data => this.map.updateMap(data.lat, data.lng))
+      .then(() => this.clearInput())    
    }
   }
 

@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^6.2.1",
     "dotenv": "^8.2.0"
   }
 }

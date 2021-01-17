@@ -14,9 +14,10 @@ class IPinfo {
   loadFirstTime() {
       this.getUserData()
       .then(data => this.displayFetchedData(data))
-      .then((data) => this.map.loadMapFirst(L.map('mapid'), data.lat, data.lng))
+      .then((data) => this.map.loadMapFirst(data.lat, data.lng))
     }
-
+    
+//get data from api
   getUserData() {
    return fetch(this.url)
        .then(response => response.json())
@@ -28,6 +29,7 @@ class IPinfo {
        })
   }
   
+  //display data on page
   displayFetchedData(data) {
          this.ip.textContent = data.ip;
          this.location.textContent = data.location.city;
