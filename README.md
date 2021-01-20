@@ -2,7 +2,7 @@
 
 ## Welcome! 👋
 
-This project was inspired by [frontenmentor](https://frontendmentor.io).
+This project was inspired by [frontenmentor](https://frontendmentor.io)challenge.
 
 ## Basic functionality
 
@@ -16,8 +16,12 @@ This is an IP Address Tracker app. User sees his/her public IP address when open
 
 ## How to install dependencies
 
+```
 npm install
+```
 
 ## How to run webpack server
 
+```
 npm start
+```
